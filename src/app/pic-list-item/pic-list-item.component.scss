@@ -1,0 +1,16 @@
+.picItem {
+  width: 150px;
+  height: 220px;
+  margin-top: 15px;
+  margin-right: 12px;
+  float: left;
+}
+
+.picItem .caption {
+  font-size: 80%;
+  color: #999;
+}
+
+.picItem .image {
+  cursor: pointer;
+}

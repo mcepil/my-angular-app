@@ -1,0 +1,9 @@
+<div class="picItem">
+  <img class="image"
+    [src]="picItem.thumbnailUrl" 
+    [alt]="picItem.id" 
+    (click)="showModalGallery(picItem)" />
+  <p class="caption">
+    {{picItem.title}}
+  </p>
+</div>

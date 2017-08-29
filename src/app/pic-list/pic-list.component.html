@@ -1,0 +1,64 @@
+<div id="pic-list-container" class="app-row">
+  <button id="btnRefresh"
+    class="btn btn-primary"
+    (click)="onRefreshPicList()"
+    [disabled]="refreshing">
+    <span *ngIf="refreshing; else showRefresh"><span class='glyphicon-left glyphicon glyphicon-refresh spinning'></span>Loading...</span>
+    <ng-template #showRefresh>Refresh</ng-template>
+  </button>
+  <div id="pic-list" class="app-row">
+    <p class="help-block text-center" *ngIf="!picList; else showPicList">
+      No pic list loaded. Please refresh.
+    </p>
+    <ng-template #showPicList>
+      <div class="app-row">
+        <app-pic-list-item *ngFor="let picItem of picList" 
+          [picItem]="picItem"
+          (show)="onShowPicModal($event)">
+        </app-pic-list-item>
+      </div>
+      <div class="app-row text-right">
+        <button id="btnPrevious"
+          class="btn btn-secondary"
+          (click)="onPrevious()"
+          [disabled]="refreshing || currentPage == 1">
+          <span class="glyphicon-left glyphicon glyphicon-chevron-left"></span>
+          Previous
+        </button>
+        <p class="page-label">
+          Page: {{currentPage}}
+        </p>
+        <button id="btnNext"
+          class="btn btn-secondary"
+          (click)="onNext()"
+          [disabled]="refreshing || currentPage == Math.ceil(placeholderList.length / 35)">
+          Next
+          <span class="glyphicon-right glyphicon glyphicon-chevron-right"></span>
+        </button>
+      </div>
+    </ng-template>
+  </div>
+  <div id="pic-list-overlay">
+    <div class="ng-overlay" *ngIf="opened"
+      (click)="closeImageModal()">
+      <div id="ng-gallery-content" class="ng-gallery-content">   
+
+        <a class="close-popup" close-button="" style="right: 0px;"
+          (click)="closeImageModal()">
+          <i class="close glyphicon glyphicon-remove" style="color:#FFF;opacity:.7"></i>
+        </a> 
+
+        <div class="uil-ring-css" *ngIf="loading">
+          <div></div>
+        </div>
+
+        <img class="effect" 
+          [src]="currentImage.url"
+          [alt]="currentImage.id"
+          (load)="onImageModalLoaded()"/>
+              
+        <span class="info-text">{{currentImage.title}}</span>
+      </div>
+    </div>
+  </div>
+</div>

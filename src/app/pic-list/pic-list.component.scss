@@ -1,0 +1,251 @@
+.glyphicon.spinning {
+  animation: spin 1s infinite linear;
+  -webkit-animation: spin 1s infinite linear;
+  -moz-animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: scale(1) rotate(0deg);
+  }
+  to {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+.glyphicon-left {
+  margin-right: 7px;
+}
+
+.glyphicon-right {
+  margin-left: 7px;
+}
+
+#btnPrevious,
+#btnNext {
+  margin-bottom: 20px;
+}
+
+#btnNext {
+  margin-right: 20px;
+}
+
+.page-label {
+  display: inline-block;
+  padding: 5px;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  height: 35px;
+}
+
+.ng-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  /*opacity: 0.85;*/
+  z-index: 9999;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.ng-gallery-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  text-align: center;
+  >img {
+    height: auto;
+    max-height: calc(100% - 150px);
+    max-width: calc(100% - 100px);
+    position: relative;
+    display: block;
+    margin: 0 auto 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    cursor: pointer;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+  &.effect {
+    animation: fadeIn 0.5s;
+  }
+  >span {
+    &.info-text {
+      color: #fff;
+      display: inline-block;
+      width: 100%;
+      height: 20px;
+      font-weight: bold;
+      text-align: center;
+      position: fixed;
+      left: 0;
+      right: 0;
+    }
+    @media (max-width: 676px) {
+      &.info-text {
+        bottom: 100px;
+      }
+    }
+    @media (min-width: 676px) and (max-width: 752px) {
+      &.info-text {
+        padding-top: 52px;
+      }
+    }
+    @media (min-width: 752px) and (max-width: 804px) {
+      &.info-text {
+        padding-top: 43px;
+      }
+    }
+    @media (min-width: 804px) {
+      &.info-text {
+        bottom: 100px;
+      }
+    }
+  }
+}
+
+uiload {
+  display: inline-block;
+  position: relative;
+  >div {
+    position: relative;
+  }
+}
+
+@-webkit-keyframes uil-ring-anim {
+  0% {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes uil-ring-anim {
+  0% {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-ms-keyframes uil-ring-anim {
+  0% {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes uil-ring-anim {
+  0% {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.uil-ring-css {
+  background: none;
+  position: relative;
+  top: 0;
+  margin: 180px auto 0 auto;
+  width: 100px;
+  height: 100px;
+  >div {
+    position: absolute;
+    display: block;
+    width: 80px;
+    height: 80px;
+    top: 20px;
+    left: 20px;
+    border-radius: 40px;
+    box-shadow: 0 6px 0 0 #fff;
+    -ms-animation: uil-ring-anim 1s linear infinite;
+    -moz-animation: uil-ring-anim 1s linear infinite;
+    -webkit-animation: uil-ring-anim 1s linear infinite;
+    -o-animation: uil-ring-anim 1s linear infinite;
+    animation: uil-ring-anim 1s linear infinite;
+  }
+}
