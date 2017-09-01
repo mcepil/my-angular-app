@@ -9,7 +9,7 @@ import { JsonPlaceholderService } from '../services/json-placeholder.service';
   styleUrls: ['./pic-list.component.scss'],
   providers: [JsonPlaceholderService]
 })
-export class PiclistComponent implements OnInit {
+export class PicListComponent implements OnInit {
 
   Math: any;
 
@@ -22,7 +22,7 @@ export class PiclistComponent implements OnInit {
   loading: boolean;
   currentImage: PicItem;
 
-  constructor(private jsonPlaceholder: JsonPlaceholderService) { }
+  constructor(private jsonPlaceholderService: JsonPlaceholderService) { }
 
   ngOnInit() {
     this.Math = Math;
@@ -30,7 +30,7 @@ export class PiclistComponent implements OnInit {
 
   onRefreshPicList = () => {
     this.refreshing = true;
-    this.jsonPlaceholder.getImages()
+    this.jsonPlaceholderService.getImages()
       .then(images => {
         this.placeholderList = images;
         this.currentPage = 1;

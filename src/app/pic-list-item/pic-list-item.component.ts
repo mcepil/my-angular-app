@@ -18,8 +18,8 @@ export class PicListItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  showModalGallery = (item: PicItem) => {
-    this.show.emit(item);
+  showModalGallery = () => {
+    this.show.emit(this.picItem);
   }
 
 }

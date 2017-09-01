@@ -7,34 +7,36 @@
     <ng-template #showRefresh>Refresh</ng-template>
   </button>
   <div id="pic-list" class="app-row">
-    <p class="help-block text-center" *ngIf="!picList; else showPicList">
-      No pic list loaded. Please refresh.
+    <p id="no-items-info" class="help-block text-center" *ngIf="!picList || picList.length === 0; else showPicList">
+      No pictures loaded. Please refresh.
     </p>
     <ng-template #showPicList>
-      <div class="app-row">
-        <app-pic-list-item *ngFor="let picItem of picList" 
-          [picItem]="picItem"
-          (show)="onShowPicModal($event)">
-        </app-pic-list-item>
-      </div>
-      <div class="app-row text-right">
-        <button id="btnPrevious"
-          class="btn btn-secondary"
-          (click)="onPrevious()"
-          [disabled]="refreshing || currentPage == 1">
-          <span class="glyphicon-left glyphicon glyphicon-chevron-left"></span>
-          Previous
-        </button>
-        <p class="page-label">
-          Page: {{currentPage}}
-        </p>
-        <button id="btnNext"
-          class="btn btn-secondary"
-          (click)="onNext()"
-          [disabled]="refreshing || currentPage == Math.ceil(placeholderList.length / 35)">
-          Next
-          <span class="glyphicon-right glyphicon glyphicon-chevron-right"></span>
-        </button>
+      <div id="items-container">
+        <div class="app-row">
+          <app-pic-list-item *ngFor="let picItem of picList" 
+            [picItem]="picItem"
+            (show)="onShowPicModal($event)">
+          </app-pic-list-item>
+        </div>
+        <div class="app-row text-right">
+          <button id="btnPrevious"
+            class="btn btn-secondary"
+            (click)="onPrevious()"
+            [disabled]="refreshing || currentPage == 1">
+            <span class="glyphicon-left glyphicon glyphicon-chevron-left"></span>
+            Previous
+          </button>
+          <p class="page-label">
+            Page: {{currentPage}}
+          </p>
+          <button id="btnNext"
+            class="btn btn-secondary"
+            (click)="onNext()"
+            [disabled]="refreshing || currentPage == Math.ceil(placeholderList.length / 35)">
+            Next
+            <span class="glyphicon-right glyphicon glyphicon-chevron-right"></span>
+          </button>
+        </div>
       </div>
     </ng-template>
   </div>
